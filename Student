@@ -1,0 +1,31 @@
+package School;
+
+public class Student {
+    private String name;
+    private int idNum;
+    private static int nextID = 100;
+
+    public Student(String name){
+        this.name = name;
+        this.idNum = nextID;
+        nextID++;
+    }
+    public void changeName(String nameNew){
+        name = nameNew;
+    }
+
+    public boolean idTest(String kid, int id){
+        boolean tester = false;
+        if (idNum < id){
+            tester = true;
+        } else{
+            tester = false;
+        }
+        return tester;
+    }
+
+    public String toString(){
+
+        return "The student " + name + " was given the ID number of " + idNum;
+    }
+}
